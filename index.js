@@ -1,5 +1,6 @@
 const express = require('express')
 const app     = express()
+const myPlayer = require('./myplayer')
 
 app.set('port', process.env.PORT || 3001)
 
