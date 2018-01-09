@@ -3,7 +3,7 @@ const myPlayer  = mongoose.model('myPlayer')
 const Router    = require('express').Router()
 
 Router.get('/', (req, res) => {
-    res.render('app-welcome')
+    res.render('welcome')
   })
   
   Router.get('/myPlayers', (req, res) => {
