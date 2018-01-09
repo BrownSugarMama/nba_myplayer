@@ -1,3 +1,6 @@
+const mongoose = require('./models/myPlayer.js')
+
+mongoose.model()
 module.exports = myPlayer
 
 const myplayer = {

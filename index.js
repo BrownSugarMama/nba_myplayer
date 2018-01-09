@@ -1,6 +1,9 @@
-const express = require('express')
-const app     = express()
-const myPlayer = require('./myplayer')
+const express       = require ('express')
+const parser        = require ('body-parser')
+const hbs           = require ('express-handlebars')
+const methodoveride = require ('method-override')
+const myPlayer      = require ('./controllers/myPlayers.js')
+const app           = express ()
 
 app.set('port', process.env.PORT || 3001)
 
