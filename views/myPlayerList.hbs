@@ -1,0 +1,13 @@
+<h2><a href="/myPlayers">What type of MyPlayer would you like to create?</a></h2>
+<h2>{{myPlayer.length}} MyPlayer</h2>
+{{#each myPlayer as |myPlayer list|}}
+<h3>
+  <a href="/myPlayer/{{myplayer.name}}">{{myplayer.name}} for President in {{myPlayer.position}}</a>
+</h3>
+{{/each}}
+
+<form action="/myPlayers" method="post">
+  <input type="text" name="myPlayer[position]" placeholder="Position" />
+  <input type="number" name="myPlayer[attribute]" placeholder="Attributes" />
+  <button type="submit">Join the Team</button>
+</form>
