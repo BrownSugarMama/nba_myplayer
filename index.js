@@ -1,7 +1,7 @@
 const express       = require ('express')
 const parser        = require ('body-parser')
 const hbs           = require ('express-handlebars')
-const methodoveride = require ('method-override')
+// const methodOveride = require ('method-override')
 const myPlayer      = require ('./controllers/myPlayers')
 const app           = express ()
 

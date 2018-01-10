@@ -1,6 +1,8 @@
-const mongoose  = require('..models/myPlayer')
-const myPlayer  = mongoose.model('myPlayer')
+const express   = ('express')
+const myPlayer  = require('../db/models/myPlayer')
 const Router    = require('express').Router()
+// const myPlayer  = mongoose.model('myPlayer')
+// const mongoose  = require('..models/myPlayer')
 
 Router.get('/', (req, res) => {
     res.render('welcome')
