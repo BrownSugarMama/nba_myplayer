@@ -1,12 +1,13 @@
-const mongoose = require('./models/myPlayer.js')
+const mongoose = require('mongoose')
 
 mongoose.model()
-module.exports = myPlayer
 
-const myplayer = {
-    "point guard",
-    "shooting guard",
-    "small forward",
-    "power forward",
-    "center",
-}
+const MyPlayer = new mongoose.Schema({
+    pointGuard: String,
+    shootingGuard: String,
+    smallForward: String,
+    powerForward: String,
+    center: String
+})
+
+module.exports = mongoose

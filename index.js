@@ -2,10 +2,10 @@ const express       = require ('express')
 const parser        = require ('body-parser')
 const hbs           = require ('express-handlebars')
 // const methodOveride = require ('method-override')
-const myPlayer      = require ('./controllers/myPlayers')
+const MyPlayer      = require ('./controllers/myPlayers')
 const app           = express ()
 
-app.set('port', process.env.PORT || 3001)
+app.set('port', process.env.PORT || 4001)
 app.set('view engine', 'hbs')
 
 app.engine('.hbs', hbs({
@@ -22,7 +22,7 @@ app.use(parser.urlencoded({ extended: true }))
 
 app.use('/myPlayers', myPlayers)
 
-app.use(methodOverride('_method'))
+// app.use(methodOverride('_method'))
 
 app.get('/', (req, res) => {
   res.render('welcome')
@@ -30,7 +30,7 @@ app.get('/', (req, res) => {
 app.set('port', process.env.PORT || 4001)
 
 app.listen(app.get('port'), () => {
-  console.log(`✅ PORT: ${app.get('port')} 🌟`)
+  console.log(`WHAT UP DOE ${app.get('port')} 🌟`)
 })
 
 // app.get('/', (req, res) => {
@@ -40,5 +40,3 @@ app.listen(app.get('port'), () => {
 // app.listen(app.get('port'), () => {
 //   console.log(`✅  WHAT UP DOE! on PORT: ${app.get('port')} Aww...yeah!🌟`);
 // });
-
-// app.listen(app.get('port'), console.log(`It's aliiive on PORT`, app.get('port'))
