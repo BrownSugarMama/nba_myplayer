@@ -2,12 +2,10 @@ const express  = require('express')
 const router   = express.Router()
 
 router.get('/', (req, res) => {
-	res.render('layout.hbs')
-}
+  res.render('welcome')
+})
 
 module.exports = router
-
-
 
 // const express   = ('express')
 // const myPlayer  = require('../db/models/myPlayer')
