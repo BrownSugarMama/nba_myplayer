@@ -57,6 +57,6 @@ module.exports = router
 //     .then(myPlayer => {
 //       res.redirect(`/myPlayers/${myPlayer.name}`)
 //     })
-//   })
+//    })
   
-  module.exports = Router
+//   module.exports = Router
