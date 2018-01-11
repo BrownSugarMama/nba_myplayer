@@ -1,7 +1,5 @@
 const mongoose = require('mongoose')
 
-mongoose.model()
-
 const MyPlayer = new mongoose.Schema({
     pointGuard: String,
     shootingGuard: String,
@@ -9,5 +7,7 @@ const MyPlayer = new mongoose.Schema({
     powerForward: String,
     center: String
 })
+
+mongoose.model('MyPlayer', MyPlayer)
 
 module.exports = mongoose

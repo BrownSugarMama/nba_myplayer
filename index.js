@@ -2,7 +2,7 @@ const express         = require ('express')
 const parser          = require ('body-parser')
 const hbs             = require ('express-handlebars')
 const methodOverride  = require ('method-override')
-const myPlayers       = require ('./controllers/myPlayers')
+const MyPlayers       = require ('./controllers/myplayers')
 const app             = express ()
 
 app.set('port', process.env.PORT || 3050)
@@ -14,13 +14,13 @@ app.engine('.hbs', hbs({
   layoutsDir:     'views/',
   defaultLayout:  'layout'
 })
-);
+)
 
 app.use('/assets', express.static('public'))
 
 app.use(parser.urlencoded({ extended: true }))
 
-app.use('/myPlayers', myPlayers)
+app.use('/myplayers', MyPlayers)
 
 app.use(methodOverride('_method'))
 

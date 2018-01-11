@@ -1,20 +1,20 @@
 const express  = require('express')
 const router   = express.Router()
 const mongoose = require('../db/connection')
-const myPlayer = mongoose.model('MyPlayer')
+const MyPlayer = mongoose.model('MyPlayer')
 
-router.get('/', (req, res) => {
-  res.render('welcome')
-})
+// router.get('/', (req, res) => {
+//   res.render('welcome')
+// })
 
 // Should be able to Create, find and update a MyPlayer. Delete maybe?
 
 // Get the list/info of MyPlayers
 router.get('/', (req, res) => {
-  myPlayer.find({})
-    .then((myPlayer) => {
-      res.render('myPlayer-list', {
-        myplayer: myPlayer
+  MyPlayer.find({})
+    .then((myplayer) => {
+      res.render('myPlayerList', {
+        myplayer: myplayer
       })
     })
 })

@@ -11,9 +11,9 @@
         "outside"       : "",
         "playmaking"    : "5-25",
         "defense"       : "",
-        "rebounding"    : "5-10", 
+        "rebounding"    : "5-10"
 
-    }
+    },
     
     {
         "position"      : "Shooting Guard",
@@ -27,9 +27,9 @@
         "outside"       : "",
         "playmaking"    : "5-20",
         "defense"       : "",
-        "rebounding"    : "5-10", 
+        "rebounding"    : "5-10"
 
-    }
+    },
 
     {
         "position"      : "Small Forward",
@@ -43,9 +43,9 @@
         "outside"       : "",
         "playmaking"    : "5-15",
         "defense"       : "",
-        "rebounding"    : "10-15", 
+        "rebounding"    : "10-15"
 
-    }
+    },
 
     {
         "position"      : "Power Forward",
@@ -59,9 +59,9 @@
         "outside"       : "",
         "playmaking"    : "5-12",
         "defense"       : "",
-        "rebounding"    : "15-20", 
+        "rebounding"    : "15-20"
 
-    }
+    },
 
     {
         "position"      : "Center",
@@ -75,7 +75,7 @@
         "outside"       : "",
         "playmaking"    : "5-10",
         "defense"       : "",
-        "rebounding"    : "20-25", 
+        "rebounding"    : "20-25"
 
     }
 
