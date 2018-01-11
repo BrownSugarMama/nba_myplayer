@@ -36,6 +36,4 @@ app.get('/', (req, res) => {
 //   res.send('hello world')
 // })
 
-// app.listen(app.get('port'), () => {
-//   console.log(`✅  WHAT UP DOE! on PORT: ${app.get('port')} Aww...yeah!🌟`);
-// });
+
