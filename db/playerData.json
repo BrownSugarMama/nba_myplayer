@@ -2,55 +2,80 @@
     {
         "position"      : "Point Guard",
         "height"        : "5'7 - 6'7",
+        "archetype1"    : "playmaker",
+        "archetype2"    : "slasher",
+        "archetype3"    : "sharpshooter",
+        "archetype4"    : "shot creator",
+        "archetype5"    : "defender",
         "inside"        : "",
         "outside"       : "",
         "playmaking"    : "5-25",
         "defense"       : "",
-        "rebounding"    : "", 
+        "rebounding"    : "5-10", 
 
     }
-
+    
     {
         "position"      : "Shooting Guard",
         "height"        : "6'2 - 6'8",
+        "archetype1"    : "playmaker",
+        "archetype2"    : "slasher",
+        "archetype3"    : "sharpshooter",
+        "archetype4"    : "shot creator",
+        "archetype5"    : "defender",
         "inside"        : "",
         "outside"       : "",
         "playmaking"    : "5-20",
         "defense"       : "",
-        "rebounding"    : "", 
+        "rebounding"    : "5-10", 
 
     }
 
     {
         "position"      : "Small Forward",
         "height"        : "6'5 - 6'10",
+        "archetype1"    : "playmaker",
+        "archetype2"    : "slasher",
+        "archetype3"    : "sharpshooter",
+        "archetype4"    : "shot creator",
+        "archetype5"    : "defender",
         "inside"        : "",
         "outside"       : "",
         "playmaking"    : "5-15",
         "defense"       : "",
-        "rebounding"    : "", 
+        "rebounding"    : "10-15", 
 
     }
 
     {
         "position"      : "Power Forward",
         "height"        : "6'7 - 6'11",
+        "archetype1"    : "rebounder",
+        "archetype2"    : "athletic finisher",
+        "archetype3"    : "stretch",
+        "archetype4"    : "post scorer",
+        "archetype5"    : "paint protector",
         "inside"        : "",
         "outside"       : "",
         "playmaking"    : "5-12",
         "defense"       : "",
-        "rebounding"    : "", 
+        "rebounding"    : "15-20", 
 
     }
 
     {
         "position"      : "Center",
         "height"        : "6'10 - 7'2",
+        "archetype1"    : "rebounder",
+        "archetype2"    : "athletic finisher",
+        "archetype3"    : "stretch",
+        "archetype4"    : "post scorer",
+        "archetype5"    : "paint protector",
         "inside"        : "",
         "outside"       : "",
         "playmaking"    : "5-10",
         "defense"       : "",
-        "rebounding"    : "", 
+        "rebounding"    : "20-25", 
 
     }
 
