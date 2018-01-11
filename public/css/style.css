@@ -1,37 +1,62 @@
 /* Reference: When President and Hwen President */
 
+/* Fonts */
+ 
+/* @font-face {
+  font-family: teamSpirit;
+  src: url(http://www.1001fonts.com/teamspirit-font.html) 
+} */
+
 html {
   min-height: 100%;
 }
 
 body {
   font-family: 'Cormorant', serif;
+  font-size: 40px;
   text-align: center;
-  background-image: linear-gradient(to bottom right, rgb(0, 185, 244), rgb(0, 254, 214));
-  background-attachment: fixed;
-  color: white;
+  color:black;
+  background-image: url("/assets/img/court2.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   text-shadow: 1px 1px 1px rgb(0, 0, 0);
+}
+
+h1 {
+  text-align: center;
+  color: white;
+}
+
+h2 {
+  text-align: center;
+}
+
+p {
+  text-align: center;
+  color: white;
+  text-shadow: 2px rgb(46, 97, 139);
 }
 
 a {
   font-family: 'Cormorant', serif;
   text-decoration: none;
   color: white;
-  text-shadow: 1px 1px 1px  rgb(2, 102, 69);
+  text-shadow: 3px 3px 3px  rgb(2, 102, 69);
 }
 
 a:hover {
-  text-shadow: 1px 1px 1px rgb(0, 0, 0);
+  text-shadow: 3px 3px 3p rgb(0, 0, 0);
 }
 
 button, input{
   background: rgb(152, 253, 236);
   color: white;
   text-shadow: 1px 1px 0px rgb(103, 184, 170);
-  border: 1px solid white;
+  border: 1px solid gray;
   padding: 4px;
 }
 
 form {
   margin: 4px;
-}
+}  

@@ -20,7 +20,7 @@ app.use('/assets', express.static('public'))
 
 app.use(parser.urlencoded({ extended: true }))
 
-app.use('/myplayers', MyPlayers)
+app.use('/myPlayers', MyPlayers)
 
 app.use(methodOverride('_method'))
 

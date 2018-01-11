@@ -1,11 +1,13 @@
 const mongoose = require('mongoose')
 
 const MyPlayer = new mongoose.Schema({
-    pointGuard: String,
-    shootingGuard: String,
-    smallForward: String,
-    powerForward: String,
-    center: String
+    position: String,
+    height: String,
+    archetype1: String,
+    archetype2: String,
+    playmaking: String,
+    defense: String,
+    rebounding: String
 })
 
 mongoose.model('MyPlayer', MyPlayer)

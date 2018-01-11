@@ -12,25 +12,33 @@ const MyPlayer = mongoose.model('MyPlayer')
 // Get the list/info of MyPlayers
 router.get('/', (req, res) => {
   MyPlayer.find({})
-    .then((myplayer) => {
+    .then((myplayers) => {
       res.render('myPlayerList', {
-        myplayer: myplayer
+        myplayers: myplayers
       })
     })
 })
 
 // Get or find a single of MyPlayers
-router.get('/:name', (req, res) => {
-  var name = req.params.name
-  myPlayer.findOne({ name: name })
-  .then(myPlayer => {
-    res.render('myPlayer', { myPlayer: myPlayer })
+router.get('/:position', (req, res) => {
+  var pos = req.params.position
+  MyPlayer.findOne({ position: pos })
+  .then(myplayer => {
+    res.render('myPlayer', { myplayer: myplayer })
   })
 })
 
 // Update and edit a MyPlayer
+// router.get('/', (req, res) => {
+//   res.render('edit')
+//   })
+
+router.get('/myPlayer', (req, res) => {
+  res.render('edit')
+})
+
 router.put('/:name', (req, res) => {
-  myPlayer.findOneAndUpdate({ name: req.params.name }, req.body.myPlayer, { new: true })
+  MyPlayer.findOneAndUpdate({ name: req.params.name }, req.body.myPlayer, { new: true })
   .then(myPlayer => {
     res.redirect(`/myPlayer/${myPlayer.name}`)
   })
@@ -38,16 +46,16 @@ router.put('/:name', (req, res) => {
 
 // Add a new Myplayer's info
 router.post('/', (req, res) => {
-  myPlayer.create(req.body.myPlayer)
-    .then(myPlayer => {
-      res.redirect(`/myPlayer/${myPlayer.name}`)
+  MyPlayer.create(req.body.myplayer)
+    .then(myplayer => {
+      res.redirect(`/myPlayers`)
     })
 })
 
 
 //Delete a MyPlayer. Not sure if I want this functionality on my app
 router.delete('/:name', (req, res) => {
-  myPlayer.findOneAndRemove({ name: req.params.name })
+  MyPlayer.findOneAndRemove({ name: req.params.name })
   .then(myPlayer => {
     res.redirect('/myPlayer')
   })
