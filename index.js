@@ -1,7 +1,7 @@
 const express         = require ('express')
 const parser          = require ('body-parser')
 const hbs             = require ('express-handlebars')
-const methodOverride  = require ('method-override')
+// const methodOverride  = require ('method-override')
 const MyPlayers       = require ('./controllers/myPlayers')
 const app             = express ()
 
@@ -26,14 +26,8 @@ app.use(parser.urlencoded({ extended: true }))
 
 app.use('/', MyPlayers)
 
-app.use(methodOverride('_method'))
+// app.use(methodOverride('_method'))
 
 app.get('/', (req, res) => {
   res.render('welcome')
 })
-
-// app.get('/', (req, res) => {
-//   res.send('hello world')
-// })
-
-
