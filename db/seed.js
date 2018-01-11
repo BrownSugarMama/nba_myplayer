@@ -1,13 +1,15 @@
 const mongoose  = require('./connection')
-const seeds     = require('./playerData.json')
-​
-const People = mongoose.model('People', PersonSchema)
-​
+const seedData    = require('./playerData.json')
+const myPlayer = mongoose.model('myPlayer');
+
+// Not sure which way this variable should be declared
+// const myPlayer = mongoose.model('myPlayer', MyPlayerSchema)
+
 mongoose.Promise = Promise
 ​
-People.remove({}).then(_ => {
- console.log('We in this bish')
- People.collection.insert(seeds).then(seededEntries => {
+myPlayer.remove({}).then(_ => {
+ console.log('Ball up, you bish')
+ myPlayer.collection.insert(seedData).then(seededEntries => {
   console.log(seededEntries)
   mongoose.connection.close()
  })
