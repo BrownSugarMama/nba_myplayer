@@ -4,8 +4,10 @@ const hbs             = require ('express-handlebars')
 const methodOverride  = require ('method-override')
 const MyPlayers       = require ('./controllers/myplayers')
 const app             = express ()
+const cors            = require ('cors')
 
 app.set('port', process.env.PORT || 3050)
+app.use(cors())
 
 app.set('view engine', 'hbs')
 app.engine('.hbs', hbs({
