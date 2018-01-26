@@ -21,17 +21,23 @@
 </form> --}}
 
 
+
 {{#unless myplayer}}
 <h2>That myplayer couldn't be found!</h2>
 {{else}}
-<h2>{{myplayer.name}} Update the MyPlayer and the Position {{myplayer.archetype}}!</h2>
-<form action="/myplayers/{{myplayer.name}}?_method=put" method="post">
+{{!-- <h2>{{myplayer.name}} Update the MyPlayer and the Position {{myplayer.position}}!</h2> --}}
+<h2>{{myplayer.name}} Update the MyPlayer {{myplayer.position}}!</h2> 
+
+<form action="/myplayers/{{myplayer.name}}?_method=put" method="put">
+{{!-- <form action="/myplayers/{{myplayer.name}}?_method" method="post"> --}}
   <input type="text" name="myplayer[name]" placeholder="Name" value="{{myplayer.name}}" />
-  <input type="text" name="myplayer[archetype]" placeholder="Archetype" value="{{myplayer.archetype}}" />
+  {{!-- <input type="text" name="myplayer[position]" placeholder="Position" value="{{myplayer.position}}" /> --}}
   <button type="submit">Update</button>
+
   <h3>Remove player</h3>
 </form>
-<form action="/myplayers/{{myplayer.name}}?_method=delete" method="post">
+{{!-- <form action="/myplayers/{{myplayer.name}}?_method=delete" method="delete"> --}}
+<form action="/myplayers/{{myplayer.name}}?_method" value="DELETE">
   <button type="submit">Remove</button>
 </form>
 {{/unless}}

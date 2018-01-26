@@ -6,6 +6,10 @@ const MyPlayers = require('./controllers/myplayers')
 const app = express()
 
 app.set('port', process.env.PORT || 3050)
+app.use('/assets', express.static('public'))
+
+app.use(parser.urlencoded({ extended: true }))
+app.use(methodOverride('_method'))
 
 app.set('view engine', 'hbs')
 app.engine('.hbs', hbs({
@@ -15,11 +19,6 @@ app.engine('.hbs', hbs({
   defaultLayout: 'layout'
 })
 )
-
-app.use('/assets', express.static('public'))
-
-app.use(parser.urlencoded({ extended: true }))
-app.use(methodOverride('_method'))
 
 app.use('/myplayers', MyPlayers)
 

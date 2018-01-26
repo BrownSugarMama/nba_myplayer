@@ -38,18 +38,25 @@ Router.post('/', (req, res) => {
   .catch(err => console.log('Something went wrong. Error:', err))
 })
 
-Router.put('/:name', (req, res) => {
+Router.put('myplayers/:name', (req, res) => {
   Myplayer.findOneAndUpdate({ name: req.params.name }, req.body.myplayer, { new: true })
   .then(myplayer => {
     res.redirect(`/myplayers/${myplayer.name}`)
   })
 })
 
-Router.delete('/:name', (req, res) => {
+Router.delete('/myplayers/:name', (req, res) => {
   Myplayer.findOneAndRemove({ name: req.params.name })
-  .then(myplayer => {
+  .then(() => {
     res.redirect('/myplayers')
   })
 })
+
+// Router.delete('/:name', (req, res) => {
+//   Myplayer.findOneAndRemove({ name: req.params.name })
+//   .then(() => {
+//     res.redirect('/myplayers')
+//   })
+// })
 
 module.exports = Router
