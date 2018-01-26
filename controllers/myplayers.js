@@ -1,5 +1,5 @@
-const express  = require('express')
-const router   = express.Router()
+const express = require('express')
+const router = express.Router()
 const mongoose = require('../db/connection')
 const MyPlayer = mongoose.model('MyPlayer')
 
@@ -19,48 +19,77 @@ router.get('/', (req, res) => {
     })
 })
 
-// Get or find a single of MyPlayers
-router.get('/:position', (req, res) => {
-  var pos = req.params.position
-  MyPlayer.findOne({ position: pos })
-  .then(myplayer => {
-    res.render('myPlayer', { myplayer: myplayer })
-  })
+Router.get('/', (req, res) => {
+  MyPlayer
+    .find({})
+    .then(MyPlayers => res.json(MyPlayers))
 })
 
-// Update and edit a MyPlayer
-// router.get('/', (req, res) => {
-//   res.render('edit')
+Router.get('/:position', (req, res) => {
+  MyPlayer
+    .findOne({position: req.params.position})
+    .then(MyPlayer => res.json(MyPlayer))
+})
+
+Router.post('/', (req, res) => {
+  MyPlayer
+    .create(req.body)
+    .then(MyPlayers => res.json(MyPlayers))
+})
+
+Router.put('/:position', (req, res) => {
+  MyPlayer
+    .findOneAndUpdate({ position: req.params.position }, req.body)
+    .then(MyPlayer => res.json(MyPlayer))
+})
+
+Router.delete('/:position', (req, res) => {
+  MyPlayer
+    .findOneAndRemove({ position: req.params.position })
+    .then(MyPlayer => res.json(MyPlayer))
+})
+
+module.exports = Router
+
+// // Get or find a single of MyPlayers
+// router.get('/:position', (req, res) => {
+//   var pos = req.params.position
+//   MyPlayer.findOne({ position: pos })
+//   .then(myplayer => {
+//     res.render('myPlayer', { myplayer: myplayer })
 //   })
+// })
 
-router.get('/myPlayer', (req, res) => {
-  res.render('edit')
-})
+// // Update and edit a MyPlayer
+// // router.get('/', (req, res) => {
+// //   res.render('edit')
+// //   })
 
-router.put('/:name', (req, res) => {
-  MyPlayer.findOneAndUpdate({ name: req.params.name }, req.body.myPlayer, { new: true })
-  .then(myPlayer => {
-    res.redirect(`/myPlayer/${myPlayer.name}`)
-  })
-})
+// router.get('/myPlayer', (req, res) => {
+//   res.render('edit')
+// })
 
-// Add a new Myplayer's info
-router.post('/', (req, res) => {
-  MyPlayer.create(req.body.myplayer)
-    .then(myplayer => {
-      res.redirect(`/myPlayers`)
-    })
-})
+// router.put('/:name', (req, res) => {
+//   MyPlayer.findOneAndUpdate({ name: req.params.name }, req.body.myPlayer, { new: true })
+//   .then(myPlayer => {
+//     res.redirect(`/myPlayer/${myPlayer.name}`)
+//   })
+// })
 
+// // Add a new Myplayer's info
+// router.post('/', (req, res) => {
+//   MyPlayer.create(req.body.myplayer)
+//     .then(myplayer => {
+//       res.redirect(`/myPlayers`)
+//     })
+// })
 
-//Delete a MyPlayer. Not sure if I want this functionality on my app
-router.delete('/:name', (req, res) => {
-  MyPlayer.findOneAndRemove({ name: req.params.name })
-  .then(myPlayer => {
-    res.redirect('/myPlayer')
-  })
-})
+// //Delete a MyPlayer. Not sure if I want this functionality on my app
+// router.delete('/:name', (req, res) => {
+//   MyPlayer.findOneAndRemove({ name: req.params.name })
+//   .then(myPlayer => {
+//     res.redirect('/myPlayer')
+//   })
+// })
 
-
-module.exports = router
-
+// module.exports = router

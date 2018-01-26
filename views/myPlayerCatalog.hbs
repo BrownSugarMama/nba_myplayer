@@ -1,13 +1,12 @@
-<h2>{{myPlayer.length}} MyPLayer</h2>
-{{#each myPlayer as |MyPlayer Catalog|}}
+<h2>{{myplayers.length}} myplayers</h2>
+{{#each myplayers as |myplayer index|}}
 <h3>
-  <a href="/myPlayer/{{myPlayer.position}}">{{myPlayer.position}}</a>
+  <a href="/myplayers/{{myplayer.postion }}">{{myplayer.position}} for President in {{myplayer.year}}</a>
 </h3>
 {{/each}}
 
-<h2>Add a MyPlayer Type</h2>
-<form action="/myPlayer" method="post">
-  <input type="text" name="myPlayer[position]" placeholder="Position">
-  <input type="text" name="myPlayer[archetype]" placeholder="Archetype">
-  <input type="submit" value="Add MyPlayer">
+<form action="/myplayers" method="post">
+  <input type="text" position="myplayer[position]" placeholder="Name" />
+  <input type="number" position="myplayer[year]" placeholder="Year" />
+  <button type="submit">Add a player</button>
 </form>
