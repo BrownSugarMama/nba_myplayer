@@ -1,12 +1,18 @@
 <h2>{{myplayers.length}} MyPlayers</h2>
 {{#each myplayers as |myplayer index|}}
 <h3>
-  <a href="/myplayers/{{myplayer.postion }}">{{myplayer.height}} for the position of {{myplayer.archtype1}}</a>
+  <a href="/myplayers/{{myplayer.postion }}">{{myplayer.height}} for the position of {{myplayer.archetype1}}</a>
 </h3>
 {{/each}}
 
-<form action="/myplayers" method="post">
-  <input type="text" position="myplayer[position]" placeholder="Position" />
-  <input type="number" position="myplayer[archetype1]" placeholder="Archetype" />
-  <button type="submit">Add a player</button>
+<h3>Update player</h3>
+<form action="/myplayers/{{myplayer.position}}?_method=put" method="post">
+  <input type="text" name="myplayer[position]" placeholder="Position" /> 
+  <input type="text" name="myplayer[archetype1]" placeholder="Archetype" />
+   <button type="submit">Update Player</button>
+</form>
+
+<h3>Remove player</h3>
+<form action="/myplayers/{{myplayer.position}}?_method=delete" method="post" type="submit">
+  <button class="btn">Remove</button>
 </form>

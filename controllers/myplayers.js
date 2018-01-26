@@ -1,65 +1,57 @@
 const express = require('express')
-const router = express.Router()
+const Router = express.Router()
 
-router.get('/', (req, res) => {
-  res.render('welcome')
-})
+// Router.get('/', (req, res) => {
+//   res.render('welcome')
+// })
 
-const Myplayer = require('../db/models/myPlayer')
-const Router = require('express').Router()
+const mongoose = require('../db/connection')
+const Myplayer = mongoose.model('Myplayer')
+// const Router = require('express').Router()
 // const myPlayer  = mongoose.model('myPlayer')
 // const mongoose = require('..models/myPlayer')
 
-Router.get('/', (req, res) => {
-  res.render('welcome')
-})
+// Router.get('/', (req, res) => {
+//   res.render('welcome')
+// })
 
-Router.get('/myplayers', (req, res) => {
-  myPlayer
+Router.get('/', (req, res) => {
+  Myplayer
     .find({})
     .then(myplayers => {
       res.render('myplayerList', { myplayers })
     })
 })
 
-router.get('/:title', (req, res) => {
-  Recipe.findOne({ title: req.params.title }).then(recipe => {
-    res.render('recipe-detail', { recipe })
-  })
-})
-
-Router.get('/myPlayers/:position', (req, res) => {
-  myPlayer
-    .findOne({position: req.params.position})
-    .then(myPlayer => {
-      res.render('myplayerCatalog', { myPlayer })
+Router.get('/:position', (req, res) => {
+  Myplayer
+    .find({position: req.params.position})
+    .then(myplayers => {
+      res.render('myplayerCatalog', { myplayers })
     })
 })
 
-router.get('/:title', (req, res) => {
-  Recipe.findOne({ title: req.params.title }).then(recipe => {
-    res.render('recipe-detail', { recipe })
-  })
-})
-
-router.post('/', (req, res) => {
+Router.post('/', (req, res) => {
   Myplayer.create(req.body.myplayer).then(myplayer => {
     res.redirect(`/myplayers/${myplayer.position}`)
   })
+  .catch(err => console.log('Something went wrong. Error:', err))
 })
 
-router.delete('/:position', (req, res) => {
-  Myplayer.findOneAndRemove({ position: req.params.position }).then(() => {
+Router.delete('/:position', (req, res) => {
+  Myplayer.findOneAndRemove({ position: req.params.position }).then((myplayer) => {
     res.redirect('/myplayers')
   })
+  .catch(err => console.log('Something went wrong. Error:', err))
 })
 
-router.put('/:position', (req, res) => {
-  Myplayer.findOneAndUpdate({ position: req.params.title }, req.body.myplayer, {
+Router.put('/:position', (req, res) => {
+  Myplayer.findOneAndUpdate({ position: req.params.position }, req.body.myplayer, {
     new: true
   }).then(myplayer => {
-    res.redirect(`/myplayers/${myplayer.title}`)
+    res.redirect(`/myplayers/${myplayer.position}`)
   })
+  .catch(err => console.log('Something went wrong. Error:', err))
 })
 
 module.exports = Router

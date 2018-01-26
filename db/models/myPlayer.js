@@ -1,5 +1,7 @@
 const mongoose = require('mongoose')
 
+// mongoose.Promise = Promise
+
 const Myplayer = new mongoose.Schema({
   position: String,
   height: String,
