@@ -5,7 +5,7 @@ router.get('/', (req, res) => {
   res.render('welcome')
 })
 
-const myPlayer = require('../db/models/myPlayer')
+const Myplayer = require('../db/models/myPlayer')
 const Router = require('express').Router()
 // const myPlayer  = mongoose.model('myPlayer')
 // const mongoose = require('..models/myPlayer')
@@ -14,12 +14,18 @@ Router.get('/', (req, res) => {
   res.render('welcome')
 })
 
-Router.get('/myPlayers', (req, res) => {
+Router.get('/myplayers', (req, res) => {
   myPlayer
     .find({})
     .then(myplayers => {
-      res.render('myplayerList', { myPlayers })
+      res.render('myplayerList', { myplayers })
     })
+})
+
+router.get('/:title', (req, res) => {
+  Recipe.findOne({ title: req.params.title }).then(recipe => {
+    res.render('recipe-detail', { recipe })
+  })
 })
 
 Router.get('/myPlayers/:position', (req, res) => {
@@ -30,28 +36,30 @@ Router.get('/myPlayers/:position', (req, res) => {
     })
 })
 
-Router.post('/myPlayers', (req, res) => {
-  myPlayer
-    .create(req.body.myPlayer)
-    .then(myPlayer => {
-      res.redirect(`/myPlayers/${myPlayer.position}`)
-    })
+router.get('/:title', (req, res) => {
+  Recipe.findOne({ title: req.params.title }).then(recipe => {
+    res.render('recipe-detail', { recipe })
+  })
 })
 
-Router.delete('/myPlayers/:position', (req, res) => {
-  myPlayer
-    .findOneAndRemove({position: req.params.position})
-    .then(() => {
-      res.redirect('/myPlayers')
-    })
+router.post('/', (req, res) => {
+  Myplayer.create(req.body.myplayer).then(myplayer => {
+    res.redirect(`/myplayers/${myplayer.position}`)
+  })
 })
 
-Router.put('/myPlayers/:position', (req, res) => {
-  myPlayer
-    .findOneAndUpdate({position: req.params.position}, req.body.myPlayer, {new: true})
-    .then(myPlayer => {
-      res.redirect(`/myPlayers/${myPlayer.position}`)
-    })
+router.delete('/:position', (req, res) => {
+  Myplayer.findOneAndRemove({ position: req.params.position }).then(() => {
+    res.redirect('/myplayers')
+  })
+})
+
+router.put('/:position', (req, res) => {
+  Myplayer.findOneAndUpdate({ position: req.params.title }, req.body.myplayer, {
+    new: true
+  }).then(myplayer => {
+    res.redirect(`/myplayers/${myplayer.title}`)
+  })
 })
 
 module.exports = Router

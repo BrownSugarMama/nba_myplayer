@@ -1,4 +1,4 @@
-<h2><a href="/myPlayers/#">What type of MyPlayer would you like to create?</a></h2>
+<h2><a href="/myplayers/#">What type of MyPlayer would you like to create?</a></h2>
 <h2>{{myplayers.length}} Players</h2>
 {{#each myplayers as |myplayer index|}}
 <h3>
@@ -9,7 +9,7 @@
 
 
 <form action="/myplayers" method="post">
-  <input type="text" name="myPlayer[position]" placeholder="Position" />
+  <input type="text" name="myPlayer[position]" placeholder="position" />
   {{!-- <input type="number" name="myPlayer[attribute]" placeholder="Attributes" /> --}}
   <button type="submit">Join the Team</button>
 </form>

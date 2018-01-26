@@ -1,10 +1,10 @@
-const mongoose = require('./models/myPlayer')
+const mongoose = require('./models/myplayer')
 
 const mongoUri = 'mongodb://localhost/myplayer'
 
 mongoose.Promise = Promise
 
-if (process.env.NODE_ENV == "production") {
+if (process.env.NODE_ENV == 'production') {
   mongoose
       .connect(process.env.MLAB_URL)
       .then(connection => console.log(`Successful connection to the database'${connection.db.databaseName}'`))
