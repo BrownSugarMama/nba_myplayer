@@ -1,4 +1,4 @@
-{{#if myplayer}}
+{{!-- {{#if myplayer}}
 <h2>{{myplayer.name}}</h2>
 <h3>
   Standing at {{myplayer.height}} for the position of {{myplayer.archetype1}}
@@ -6,8 +6,6 @@
 {{else}}
 <h2>That myplayer couldn't be found!</h2>
 {{/if}}
-
-
 
 
 <h3>Update player</h3>
@@ -20,4 +18,20 @@
 <h3>Remove player</h3>
 <form action="/myplayers/{{myplayer.name}}?_method=delete" method="post" type="submit">
   <button class="btn">Remove</button>
+</form> --}}
+
+
+{{#unless myplayer}}
+<h2>That myplayer couldn't be found!</h2>
+{{else}}
+<h2>{{myplayer.name}} Update the MyPlayer and the Position {{myplayer.archetype}}!</h2>
+<form action="/myplayers/{{myplayer.name}}?_method=put" method="post">
+  <input type="text" name="myplayer[name]" placeholder="Name" value="{{myplayer.name}}" />
+  <input type="text" name="myplayer[archetype]" placeholder="Archetype" value="{{myplayer.archetype}}" />
+  <button type="submit">Update</button>
+  <h3>Remove player</h3>
 </form>
+<form action="/myplayers/{{myplayer.name}}?_method=delete" method="post">
+  <button type="submit">Remove</button>
+</form>
+{{/unless}}
