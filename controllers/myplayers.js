@@ -38,19 +38,36 @@ Router.post('/', (req, res) => {
   .catch(err => console.log('Something went wrong. Error:', err))
 })
 
-Router.put('myplayers/:name', (req, res) => {
+Router.put('myplayer/:name', (req, res) => {
   Myplayer.findOneAndUpdate({ name: req.params.name }, req.body.myplayer, { new: true })
   .then(myplayer => {
     res.redirect(`/myplayers/${myplayer.name}`)
   })
 })
 
-Router.delete('/myplayers/:name', (req, res) => {
+Router.delete('/myplayer/:name', (req, res) => {
   Myplayer.findOneAndRemove({ name: req.params.name })
   .then(() => {
     res.redirect('/myplayers')
   })
 })
+
+// Router.delete('/:name', (req, res, next) => {
+//   Myplayer.findOneAndRemove({_name: req.params.name}, (err) => {
+//     if (err) {
+//       req.flash('error', err)
+//       return res.redirect('/myplayer')
+//     }
+
+//     req.flash('success', 'Your myplayer has been deleted.')
+//     return res.redirect('/myplayers')
+//   })
+// })
+// Router.delete("../myplayer/:name", (req, res) => {
+//   Myplayer
+//     .findOneAndRemove({ name: req.params.name })
+//     .then(myplayer => res.json(bookmark))
+// })
 
 // Router.delete('/:name', (req, res) => {
 //   Myplayer.findOneAndRemove({ name: req.params.name })
