@@ -39,7 +39,8 @@ Router.post('/', (req, res) => {
 })
 
 Router.delete('/:position', (req, res) => {
-  Myplayer.findOneAndRemove({ position: req.params.position }).then((myplayer) => {
+  Myplayer.findOne({})
+  .findOneAndRemove({ position: req.params.position }).then((myplayer) => {
     res.redirect('/myplayers')
   })
   .catch(err => console.log('Something went wrong. Error:', err))
