@@ -6,7 +6,6 @@
 </h3>
 {{/each}}
 
-
 {{!-- Form for adding/creating new myplayer information --}}
 {{!-- <form action="/myplayers" method="post">
   <input type="text" name="myPlayer[position]" placeholder="Position" /> --}}
