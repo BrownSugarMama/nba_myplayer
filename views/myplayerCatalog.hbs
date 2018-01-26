@@ -1,18 +1,23 @@
-<h2>{{myplayers.length}} MyPlayers</h2>
-{{#each myplayers as |myplayer index|}}
+{{#if myplayer}}
+<h2>{{myplayer.name}}</h2>
 <h3>
-  <a href="/myplayers/{{myplayer.postion }}">{{myplayer.height}} for the position of {{myplayer.archetype1}}</a>
+  Standing at {{myplayer.height}} for the position of {{myplayer.archetype1}}
 </h3>
-{{/each}}
+{{else}}
+<h2>That myplayer couldn't be found!</h2>
+{{/if}}
+
+
+
 
 <h3>Update player</h3>
-<form action="/myplayers/{{myplayer.position}}?_method=put" method="post">
-  <input type="text" name="myplayer[position]" placeholder="Position" /> 
+<form action="/myplayers/{{myplayer.name}}?_method=put" method="post">
+  <input type="text" name="myplayer[name]" placeholder="Player Name" /> 
   <input type="text" name="myplayer[archetype1]" placeholder="Archetype" />
    <button type="submit">Update Player</button>
 </form>
 
 <h3>Remove player</h3>
-<form action="/myplayers/{{myplayer.position}}?_method=delete" method="post" type="submit">
+<form action="/myplayers/{{myplayer.name}}?_method=delete" method="post" type="submit">
   <button class="btn">Remove</button>
 </form>

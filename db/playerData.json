@@ -1,5 +1,6 @@
 [
     {
+        "name": "John",
         "position"      : "Point Guard",
         "height"        : "5'7 - 6'7",
         "archetype1"    : "playmaker",
@@ -16,6 +17,7 @@
     },
     
     {
+        "name": "James",
         "position"      : "Shooting Guard",
         "height"        : "6'2 - 6'8",
         "archetype1"    : "playmaker",
@@ -32,6 +34,7 @@
     },
 
     {
+        "name": "Russ",
         "position"      : "Small Forward",
         "height"        : "6'5 - 6'10",
         "archetype1"    : "playmaker",
@@ -48,6 +51,7 @@
     },
 
     {
+        "name": "Tim",
         "position"      : "Power Forward",
         "height"        : "6'7 - 6'11",
         "archetype1"    : "rebounder",
@@ -64,6 +68,7 @@
     },
 
     {
+        "name": "Devin",
         "position"      : "Center",
         "height"        : "6'10 - 7'2",
         "archetype1"    : "rebounder",

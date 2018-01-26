@@ -19,10 +19,9 @@ app.engine('.hbs', hbs({
 app.use('/assets', express.static('public'))
 
 app.use(parser.urlencoded({ extended: true }))
+app.use(methodOverride('_method'))
 
 app.use('/myplayers', MyPlayers)
-
-app.use(methodOverride('_method'))
 
 app.get('/', (req, res) => {
   res.render('welcome')

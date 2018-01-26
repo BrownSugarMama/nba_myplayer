@@ -23,36 +23,33 @@ Router.get('/', (req, res) => {
     })
 })
 
-Router.get('/:position', (req, res) => {
+Router.get('/:name', (req, res) => {
   Myplayer
-    .find({position: req.params.position})
-    .then(myplayers => {
-      res.render('myplayerCatalog', { myplayers })
+    .find({name: req.params.name})
+    .then(myplayer => {
+      res.render('myplayerCatalog', { myplayer })
     })
 })
 
 Router.post('/', (req, res) => {
   Myplayer.create(req.body.myplayer).then(myplayer => {
-    res.redirect(`/myplayers/${myplayer.position}`)
+    res.redirect(`/myplayers/${myplayer.name}`)
   })
   .catch(err => console.log('Something went wrong. Error:', err))
 })
 
-Router.delete('/:position', (req, res) => {
-  Myplayer.findOne({})
-  .findOneAndRemove({ position: req.params.position }).then((myplayer) => {
+Router.put('/:name', (req, res) => {
+  Myplayer.findOneAndUpdate({ name: req.params.name }, req.body.myplayer, { new: true })
+  .then(myplayer => {
+    res.redirect(`/myplayers/${myplayer.name}`)
+  })
+})
+
+Router.delete('/:name', (req, res) => {
+  Myplayer.findOneAndRemove({ name: req.params.name })
+  .then(myplayer => {
     res.redirect('/myplayers')
   })
-  .catch(err => console.log('Something went wrong. Error:', err))
-})
-
-Router.put('/:position', (req, res) => {
-  Myplayer.findOneAndUpdate({ position: req.params.position }, req.body.myplayer, {
-    new: true
-  }).then(myplayer => {
-    res.redirect(`/myplayers/${myplayer.position}`)
-  })
-  .catch(err => console.log('Something went wrong. Error:', err))
 })
 
 module.exports = Router

@@ -2,13 +2,13 @@
 <h2>{{myplayers.length}} Players</h2>
 {{#each myplayers as |myplayer index|}}
 <h3>
-  <a href="/myplayers/{{myplayer.position}}">{{myplayer.position}}</a>
+  <a href="/myplayers/{{myplayer.name}}">{{myplayer.name}}</a>
 </h3>
 {{/each}}
 
 {{!-- Form for adding/creating new myplayer information --}}
 <form action="/myplayers" method="post">
-  <input type="text" name="myplayer[position]" placeholder="Position" /> 
+  <input type="text" name="myplayer[name]" placeholder="Position" /> 
   <input type="text" name="myplayer[archetype1]" placeholder="Archetype" />
    <button type="submit">Join the Team</button>
 </form>
