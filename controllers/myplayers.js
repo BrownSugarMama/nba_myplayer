@@ -32,13 +32,6 @@ Router.put('/:name', (req, res) => {
   })
 })
 
-// Router.put('/:name', (req, res) => {
-//   Myplayer.findOneAndUpdate({ name: req.params.name }, req.body.myplayer, { new: true })
-//   .then(myplayer => {
-//     res.redirect(`/myplayers/${myplayer.name}`)
-//   })
-// })
-
 Router.delete('/:name', (req, res) => {
   Myplayer.findOneAndRemove({ name: req.params.name })
   .then(() => {
