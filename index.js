@@ -2,7 +2,7 @@ const express = require('express')
 const parser = require('body-parser')
 const hbs = require('express-handlebars')
 const methodOverride = require('method-override')
-const MyPlayers = require('./controllers/myplayers')
+const Myplayers = require('./controllers/myplayers')
 const app = express()
 
 app.set('port', process.env.PORT || 3050)
@@ -20,7 +20,7 @@ app.engine('.hbs', hbs({
 })
 )
 
-app.use('/myplayers', MyPlayers)
+app.use('/myplayers', Myplayers)
 
 app.get('/', (req, res) => {
   res.render('welcome')

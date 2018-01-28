@@ -1,0 +1,21 @@
+
+{{!-- welcome landing page render --}}
+<h1 class = "center purple-text">What type of MyPlayer would you like to create?</h1>
+
+
+{{!-- <h2>{{myplayers.length}} myplayers</h2> --}}
+{{#each myplayers as |myplayer index|}}
+    <h3>
+    <a class ="purple-text" href="/myplayers/{{myplayer.name}}">{{myplayer.name}}</a>
+    </h3>
+     <a class ="purple-text" href="/myplayers/{{myplayer.position}}">{{myplayer.position}}</a>
+    </h3>
+{{/each}}
+
+<h5 class ="white-text">Create New Myplayer</h5>
+<form action="/myplayers" method="post">
+  <input type="text" name="myplayer[name]" placeholder="Name">
+  <input type="text" name="myplayer[position]" placeholder="Position">
+  {{!-- <input type="text" name="myplayer[archetype]" placeholder="Archetype"> --}}
+  <input type="submit" value="Submit New Myplayer">
+</form>

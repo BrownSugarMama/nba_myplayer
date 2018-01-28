@@ -4,13 +4,7 @@ const mongoose = require('mongoose')
 
 const Myplayer = new mongoose.Schema({
   name: String,
-  position: String,
-  height: String,
-  archetype1: String,
-  archetype2: String,
-  playmaking: String,
-  defense: String,
-  rebounding: String
+  position: String
 })
 
 mongoose.model('Myplayer', Myplayer)
