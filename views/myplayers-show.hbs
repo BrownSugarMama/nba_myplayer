@@ -1,39 +1,20 @@
 {{#if myplayer}}
-<h1 class="purple-text">{{ myplayer.name}}</h1>
+<h2 class="white-text">{{ myplayer.name}}</h2>
 {{else}}
 <h2>That myplayer couldn't be found!</h2>
 {{/if}}
-<h4 class="purple-text">Update information</h4>
+<h3 class="white-text">UPDATE</h3>
 <form action="/myplayers/{{  myplayer.name }}?_method=put" method="post">
-    <input type="text" class="purple-text" name="myplayer[name]" value="{{  myplayer.name }}">
-    <input type="text" class="purple-text" name="myplayer[position]" value="{{  myplayer.position }}">
-    <input type="submit" value="update">
+    <input type="text" class="white-text" name="myplayer[name]" value="{{  myplayer.name }}">
+    <input type="text" class="white-text" name="myplayer[position]" value="{{  myplayer.position }}">
+    <button class="btn" >UPDATE</button>
+    {{!-- <input type="submit" value="update"> --}}
 </form>
+
 <br>
-<h4 class="purple-text">Remove  Myplayer</h4>
+<h3 class="white-text">REMOVE</h3>
 <form method="post" action="/myplayers/{{  myplayer.name }}?_method=delete" type="submit">
-<button>Remove</button>
+<button class="btn" >Remove</button>
 </form>
 
-----------------
-
-{{!-- 
-{{#if routine}}
-<h1 class="purple-text">{{routine.title}}</h1>
-{{else}}
-<h2>That routine couldn't be found!</h2>
-{{/if}}
-<h4 class="purple-text">Update information</h4>
-<form action="/routines/{{ routine.title }}?_method=put" method="post">
-  <input type="text" class="purple-text" name="routine[title]" value="{{ routine.title }}">
-  <input type="text" class="purple-text" name="routine[products]" value="{{ routine.products }}">
-  <input type="text" class="purple-text" name="routine[duration]" value="{{ routine.duration }}">
-  <input type="text" class="purple-text" name="routine[directions]" value="{{ routine.directions }}">
-  <input type="submit" value="update">
-</form>
-<br>
-<h4 class="purple-text">Remove Routine</h4>
-<form method="post" action="/routines/{{ routine.title }}?_method=delete" type="submit">
-<button>Remove</button>
-</form> --}}
 

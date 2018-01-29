@@ -19,10 +19,13 @@ body {
 h1 {
   text-align: center;
   color: white;
+  font-size: 60px
 }
 
 h2 {
   text-align: center;
+  color: white;
+  font-size: 30px
 }
 
 p {
@@ -35,14 +38,14 @@ a {
   font-family: 'Cormorant', serif;
   text-decoration: none;
   color: white;
-  text-shadow: 3px 3px 3px  rgb(2, 102, 69);
+  text-shadow: 3px 3px 3px  rgb(209, 65, 190);
 }
 
 a:hover {
-  text-shadow: 3px 3px 3p rgb(0, 0, 0);
+  text-shadow: 3px 3px 3p rgb(248, 64, 239);
 }
 
-button, input{
+input{
   background: rgb(152, 253, 236);
   color: white;
   text-shadow: 1px 1px 0px rgb(103, 184, 170);
@@ -50,6 +53,15 @@ button, input{
   padding: 4px;
 }
 
+.btn{
+  background: rgb(255, 99, 195);
+  color: white;
+  text-shadow: 1px 1px 0px rgb(103, 184, 170);
+  border: 1px solid gray;
+  padding: 4px;
+  
+}
+
 form {
-  margin: 4px;
+  margin: 8px;
 }  

@@ -1,14 +1,14 @@
 
 {{!-- welcome landing page render --}}
-<h1 class = "center purple-text">What type of MyPlayer would you like to create?</h1>
+<h1 class = "center white-text">What type of MyPlayer would you like to create?</h1>
 
 
 {{!-- <h2>{{myplayers.length}} myplayers</h2> --}}
 {{#each myplayers as |myplayer index|}}
     <h3>
-    <a class ="purple-text" href="/myplayers/{{myplayer.name}}">{{myplayer.name}}</a>
+    <a class ="white-text" href="/myplayers/{{myplayer.name}}">{{myplayer.name}}</a>
     </h3>
-     <a class ="purple-text" href="/myplayers/{{myplayer.position}}">{{myplayer.position}}</a>
+     <a class ="white-text" href="/myplayers/{{myplayer.position}}">{{myplayer.position}}</a>
     </h3>
 {{/each}}
 
